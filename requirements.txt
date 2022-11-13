@@ -10,3 +10,4 @@ werkzeug
 flask_login
 cryptography
 mysql-connector-python
+pymysql
