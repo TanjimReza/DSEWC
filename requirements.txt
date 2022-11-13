@@ -13,3 +13,4 @@ mysql-connector-python
 pymysql
 MySQL-python
 wheel
+ConfigParser
