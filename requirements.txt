@@ -11,5 +11,5 @@ flask_login
 cryptography
 mysql-connector-python
 pymysql
-mysqlclient
+MySQL-python
 wheel
