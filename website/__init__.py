@@ -17,7 +17,9 @@ def create_app():
     # app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     app.config['SECRET_KEY'] = 'FIFADSE2022GGLOLXD2022'
     # app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql:///root:"no password"@localhost:3306/dsefifa'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://tanjimflask:tanjimflask@localhost/dsefifa"
+#     app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://tanjimflask:tanjimflask@localhost/dsefifa"
+    app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql://tanjimre_primeparkuser:cff70978c4053@server-arizona-vps.quattic.com:3306/tanjimre_dsefifa"
+
 
     db.init_app(app)
     
