@@ -9,3 +9,4 @@ flask_sqlalchemy
 werkzeug
 flask_login
 mysqlclient
+cryptography
