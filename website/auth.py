@@ -29,33 +29,34 @@ def login():
 
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup():
-    if request.method == 'POST':
-        data = request.form
-        email = request.form.get('username')
-        password = request.form.get('password')
+    return redirect(url_for('auth.login'))
+#     if request.method == 'POST':
+#         data = request.form
+#         email = request.form.get('username')
+#         password = request.form.get('password')
         
-        user = User.query.filter_by(email=email).first()
-        if user:
-            flash('Email already exists.', category='error')
+#         user = User.query.filter_by(email=email).first()
+#         if user:
+#             flash('Email already exists.', category='error')
         
-        elif len(email) < 4:
-            flash('Email must be greater than 3 characters.', category='error')
-            pass
-        elif len(password) < 4:
-            flash('Password must be greater than 3 characters.', category='error')
-            pass
-        else: 
-            new_user = User(email=email, password=generate_password_hash(password, method='sha256'))
-            db.session.add(new_user)
-            db.session.commit()
-            flash('Logged in successfully!', category='success')
+#         elif len(email) < 4:
+#             flash('Email must be greater than 3 characters.', category='error')
+#             pass
+#         elif len(password) < 4:
+#             flash('Password must be greater than 3 characters.', category='error')
+#             pass
+#         else: 
+#             new_user = User(email=email, password=generate_password_hash(password, method='sha256'))
+#             db.session.add(new_user)
+#             db.session.commit()
+#             flash('Logged in successfully!', category='success')
             
-            login_user(new_user, remember=True)
-            return redirect(url_for('views.index'))
+#             login_user(new_user, remember=True)
+#             return redirect(url_for('views.index'))
 
-        print(data)
-    context = { 'title': 'TANJIM' }
-    return render_template("login.html")
+#         print(data)
+#     context = { 'title': 'TANJIM' }
+#     return render_template("login.html")
 
 @auth.route('/logout')
 @login_required
